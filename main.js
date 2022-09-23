@@ -86,4 +86,3 @@ replay.addEventListener("click", () => {
   });
   winner.style.display = "none";
 });
-
