@@ -1,0 +1,251 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+:root {
+  --transition: 0.3s ease-in-out all;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(241, 245, 248);
+  width: 100vw;
+  height: 100vh;
+}
+.start {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(109, 135, 152, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.startbtn {
+  font-size: 1.5rem;
+  padding: 8px 22px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  background: rgb(255, 98, 51);
+  cursor: pointer;
+}
+.container {
+  width: 700px;
+  margin: 0 auto;
+}
+header {
+  width: calc(100% - 4px);
+  border: 3px solid red;
+  box-shadow: 0 0 10px red;
+  display: flex;
+  padding: 10px 12px;
+  justify-content: space-between;
+}
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+.card {
+  width: 132px;
+  height: 128px;
+  border: 3px solid rgb(25, 139, 238);
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.unknown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 5px;
+  font-size: 100px;
+  background: rgb(51, 51, 51);
+  transition: all 0.3s linear;
+  z-index: 1;
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(6, 50, 82);
+
+  transition: all 0.3s linear;
+}
+.back img {
+  padding-top: 12px;
+  width: 80%;
+  transform: rotateY(180deg);
+}
+.card.active {
+  transform: rotateY(180deg);
+  transition: all 0.4s linear;
+  pointer-events: all;
+  cursor: pointer;
+}
+.card.notactive {
+  transform: rotateY(360deg);
+  transition: all 0.4s linear;
+  pointer-events: none;
+}
+.winner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(109, 135, 152, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.winner .main {
+  color: #fff;
+
+  text-align: center;
+  border: 5px solid rgb(0, 136, 255);
+  background-color: rgba(30, 43, 223, 0.65);
+  transform: skewX(-30deg);
+  text-align: center;
+  padding: 20px 80px;
+  letter-spacing: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.main p {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.main .replay {
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  background-color: rgb(218, 51, 0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 7px;
+}
+@media (max-width: 762px) {
+  .container {
+    max-width: 560px;
+  }
+  .card {
+    max-height: 100px;
+    max-width: 130px;
+  }
+  .unknown {
+    font-size: 70px;
+  }
+  .back img {
+    padding-top: 6px;
+    width: 71%;
+  }
+}
+.card .unknown:hover {
+  background-color: white;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+}
+@media (max-width: 570px) {
+  .card {
+    max-width: 104px;
+    max-height: 100px;
+  }
+  .unknown {
+    font-size: 70px;
+  }
+
+  .container {
+    max-width: 450px;
+    position: relative;
+    top: 62px;
+  }
+  .back img {
+    padding-top: 6px;
+    width: 81%;
+  }
+  .main {
+    padding: 7px 19px;
+  }
+  .main p {
+    font-size: 24px;
+  }
+  .main .replay {
+    font-size: 17px;
+    padding: 7px 12px;
+  }
+}
+@media (max-width: 460px) {
+  .card {
+    max-width: 80px;
+    max-height: 85px;
+  }
+  .unknown {
+    font-size: 50px;
+  }
+  .container {
+    max-width: 350px;
+    position: relative;
+    top: 40px;
+  }
+  .back img {
+    padding-top: 6px;
+    width: 91%;
+  }
+  .winner .main {
+    padding: 20px 30px;
+  }
+  .main p {
+    font-size: 20px;
+  }
+  .main .replay {
+    padding: 7px 10px;
+  }
+}
+@media (max-width: 350px) {
+  .card {
+    max-width: 70px;
+    max-height: 75px;
+  }
+  .unknown {
+    font-size: 50px;
+  }
+  .container {
+    max-width: 310px;
+    position: relative;
+    top: 80px;
+  }
+  .back img {
+    padding-top: 6px;
+    width: 91%;
+  }
+  .winner .main {
+    padding: 20px 18px;
+  }
+  .main p {
+    font-size: 17px;
+  }
+  .main .replay {
+    padding: 7px 10px;
+  }
+}
