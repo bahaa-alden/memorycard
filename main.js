@@ -86,3 +86,5 @@ replay.addEventListener("click", () => {
   });
   winner.style.display = "none";
 });
+console.log("dasd");
+
