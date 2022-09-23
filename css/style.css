@@ -89,6 +89,7 @@ header {
 
   transition: all 0.3s linear;
 }
+
 .back img {
   padding-top: 12px;
   width: 80%;
@@ -97,13 +98,13 @@ header {
 .card.active {
   transform: rotateY(180deg);
   transition: all 0.4s linear;
-  pointer-events: all;
+  pointer-events: none;
   cursor: pointer;
 }
 .card.notactive {
   transform: rotateY(360deg);
   transition: all 0.4s linear;
-  pointer-events: none;
+  pointer-events: all;
 }
 .winner {
   position: absolute;

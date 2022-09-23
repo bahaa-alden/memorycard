@@ -23,18 +23,16 @@ startbtn.addEventListener("click", function () {
         e.classList.add("active");
         e.firstElementChild.style.zIndex = "0";
         e.lastElementChild.style.zIndex = "1";
-        e.style.pointerEvents = "none";
       });
-      setTimeout(function () {
-        card.forEach((e) => {
-          e.classList.remove("active");
-          e.classList.add("notactive");
-          e.firstElementChild.style.zIndex = "1";
-          e.lastElementChild.style.zIndex = "0";
-          e.style.pointerEvents = "all";
-        });
-      }, 3500);
-    }, 1000);
+    }, 100);
+    setTimeout(function () {
+      card.forEach((e) => {
+        e.classList.remove("active");
+        e.classList.add("notactive");
+        e.firstElementChild.style.zIndex = "1";
+        e.lastElementChild.style.zIndex = "0";
+      });
+    }, 3500);
   }
 });
 let cnt = 0;
@@ -46,6 +44,7 @@ card.forEach(function (elem) {
     elem.classList.add("active");
     elem.firstElementChild.style.zIndex = "0";
     elem.lastElementChild.style.zIndex = "1";
+
     s.push(elem);
     if (s.length === 2) {
       if (s[0].dataset.club === s[1].dataset.club) {
