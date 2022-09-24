@@ -51,6 +51,7 @@ card.forEach(function (elem) {
       if (s[0].dataset.club === s[1].dataset.club) {
         s = [];
         correctsound.play();
+        if (worn.textContent === 6) worn.textContent--;
       } else {
         setTimeout(function () {
           s.forEach((e) => {
