@@ -16,7 +16,10 @@ startbtn.addEventListener("click", function () {
   Uname.textContent = prompt("Enter Your Name", "UserName");
   if (Uname.textContent !== null && Uname.textContent !== "") {
     start.style.display = "none";
-
+    suffle(orderRange);
+    card.forEach((e, index) => {
+      e.style.order = +orderRange[index];
+    });
     setTimeout(function () {
       card.forEach((e) => {
         e.classList.remove("notactive");
@@ -83,5 +86,18 @@ replay.addEventListener("click", () => {
     e.firstElementChild.style.zIndex = "1";
     e.lastElementChild.style.zIndex = "0";
   });
+
   winner.style.display = "none";
 });
+let orderRange = Object.keys(card);
+function suffle(array) {
+  let curr = array.length;
+  while (curr > 0) {
+    let ran = Math.floor(Math.random() * curr);
+    let temp = array[curr - 1];
+    array[curr - 1] = array[ran];
+    array[ran] = temp;
+
+    curr--;
+  }
+}
