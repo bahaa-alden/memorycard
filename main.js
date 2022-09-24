@@ -1,8 +1,6 @@
 let start = document.querySelector(".start");
 let wronsound = new Audio("Incorrect Sound Effects All Sounds.mp3");
-let correctsound = new Audio(
-  "Correct Answer Sound Effect  NO COPYRIGHT 🎤🎶.mp3"
-);
+let correctsound = new Audio("Correct Answer Sound Effect _ NO COPYRIGHT .mp3");
 let startbtn = document.querySelector(".startbtn");
 let Uname = document.querySelector(".name span");
 let back = document.querySelectorAll(".back");
