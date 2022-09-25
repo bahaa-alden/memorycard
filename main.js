@@ -20,18 +20,12 @@ startbtn.addEventListener("click", function () {
     });
     setTimeout(function () {
       card.forEach((e) => {
-        e.classList.remove("notactive");
         e.classList.add("active");
-        e.firstElementChild.style.zIndex = "0";
-        e.lastElementChild.style.zIndex = "1";
       });
     }, 100);
     setTimeout(function () {
       card.forEach((e) => {
         e.classList.remove("active");
-        e.classList.add("notactive");
-        e.firstElementChild.style.zIndex = "1";
-        e.lastElementChild.style.zIndex = "0";
       });
     }, 3500);
   }
@@ -41,11 +35,7 @@ let cnte = 0;
 let s = [];
 card.forEach(function (elem) {
   elem.addEventListener("click", function () {
-    elem.classList.remove("notactive");
     elem.classList.add("active");
-    elem.firstElementChild.style.zIndex = "0";
-    elem.lastElementChild.style.zIndex = "1";
-
     s.push(elem);
     if (s.length === 2) {
       if (s[0].dataset.club === s[1].dataset.club) {
@@ -56,9 +46,6 @@ card.forEach(function (elem) {
         setTimeout(function () {
           s.forEach((e) => {
             e.classList.remove("active");
-            e.classList.add("notactive");
-            e.firstElementChild.style.zIndex = "1";
-            e.lastElementChild.style.zIndex = "0";
           });
           wronsound.play();
           s = [];
@@ -82,8 +69,6 @@ replay.addEventListener("click", () => {
   start.style.display = "flex";
   card.forEach((e) => {
     e.classList.remove("active");
-    e.firstElementChild.style.zIndex = "1";
-    e.lastElementChild.style.zIndex = "0";
   });
 
   winner.style.display = "none";
@@ -96,7 +81,6 @@ function suffle(array) {
     let temp = array[curr - 1];
     array[curr - 1] = array[ran];
     array[ran] = temp;
-
     curr--;
   }
 }
